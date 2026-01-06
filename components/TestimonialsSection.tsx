@@ -8,7 +8,6 @@ import { Tag, Rate } from "antd";
 import {
   LeftOutlined,
   RightOutlined,
-  FormatQuoteOutlined,
 } from "@ant-design/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
