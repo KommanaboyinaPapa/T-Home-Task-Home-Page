@@ -167,7 +167,7 @@ export default function AboutSection() {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-3xl transform rotate-3 opacity-50" />
               
               {/* Main Image Container */}
-              <div className="relative bg-gradient-to-br from-primary-700 to-primary-900 rounded-3xl overflow-hidden shadow-elegant">
+              <div className="relative bg-gradient-to-br from-primary-700 to-primary-900 rounded-3xl overflow-hidden shadow-elegant card-hover">
                 <div className="aspect-square p-8 flex items-center justify-center">
                   {/* Illustration Grid */}
                   <div className="grid grid-cols-2 gap-4 w-full max-w-md">
@@ -199,7 +199,7 @@ export default function AboutSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 1 }}
                 whileHover={{ scale: 1.05 }}
-                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-elegant p-4 flex items-center gap-3"
+                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-elegant p-4 flex items-center gap-3 card-hover"
               >
                 <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
                   <CheckCircleFilled className="text-2xl text-green-500" />

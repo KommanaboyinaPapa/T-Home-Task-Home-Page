@@ -70,7 +70,7 @@ export default function WhyChooseUsSection() {
               <div className="absolute -inset-4 bg-gradient-to-br from-primary-100 to-gray-100 rounded-[40px] transform -rotate-3" />
               
               {/* Image Frame */}
-              <div className="relative rounded-[32px] overflow-hidden shadow-elegant">
+              <div className="relative rounded-[32px] overflow-hidden shadow-elegant card-hover">
                 <div className="aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900">
                   {/* Team Illustration */}
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -104,7 +104,7 @@ export default function WhyChooseUsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.8 }}
-                className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-elegant p-4"
+                className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-elegant p-4 card-hover"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">

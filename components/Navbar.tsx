@@ -18,6 +18,7 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 import { Button, Drawer } from "antd";
+import Tilt from "@/components/Tilt";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -134,20 +135,21 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="relative"
-              >
-                {/* Logo with glow effect */}
-                <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-xl group-hover:bg-primary-500/30 transition-all" />
-                <div className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center border-[3px] border-white shadow-lg group-hover:shadow-xl transition-all">
-                  <div className="absolute inset-1 rounded-full border border-white/20" />
-                  <div className="text-center">
-                    <span className="text-white font-bold text-[10px] lg:text-xs tracking-wide">T-HOME</span>
+              <Tilt maxTilt={25} scale={1.1} className="relative rounded-full">
+                <motion.div
+                  whileTap={{ scale: 0.97 }}
+                  className="relative"
+                >
+                  {/* Logo with glow effect */}
+                  <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-xl group-hover:bg-primary-500/40 transition-all" />
+                  <div className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center border-[3px] border-white shadow-lg group-hover:shadow-2xl transition-all float-3d">
+                    <div className="absolute inset-1 rounded-full border border-white/20" />
+                    <div className="text-center">
+                      <span className="text-white font-bold text-[10px] lg:text-xs tracking-wide">T-HOME</span>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Tilt>
               <div className="hidden sm:block">
                 <h1 className="text-xl lg:text-2xl font-bold">
                   <span className="text-primary-700">T</span>
@@ -160,15 +162,17 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
-                <div
+                <motion.div
                   key={item.name}
                   className="relative"
                   onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
                   onMouseLeave={() => setActiveDropdown(null)}
+                  whileHover={{ y: -3, rotateX: 8 }}
+                  style={{ perspective: 600 }}
                 >
                   <Link
                     href={item.href}
-                    className={`relative px-4 py-2 text-[15px] font-medium transition-all duration-300 flex items-center gap-1 rounded-xl group ${
+                    className={`nav-3d relative px-4 py-2 text-[15px] font-medium transition-all duration-300 flex items-center gap-1 rounded-xl group ${
                       activeDropdown === item.name
                         ? "text-primary-700"
                         : "text-gray-700 hover:text-primary-700"
@@ -199,7 +203,7 @@ export default function Navbar() {
                           transition={{ duration: 0.2 }}
                           className="absolute top-full left-0 pt-2 z-50"
                         >
-                          <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-100 overflow-hidden min-w-[260px]">
+                          <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-100 overflow-hidden min-w-[260px] card-hover">
                             {/* Dropdown Header */}
                             <div className="bg-gradient-to-r from-primary-700 to-primary-600 px-5 py-3">
                               <p className="text-white font-semibold">Our Services</p>
@@ -234,7 +238,7 @@ export default function Navbar() {
                       )}
                     </AnimatePresence>
                   )}
-                </div>
+                </motion.div>
               ))}
             </nav>
 
@@ -242,9 +246,9 @@ export default function Navbar() {
             <div className="flex items-center gap-2 lg:gap-3">
               {/* Search Button */}
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="hidden md:flex w-10 h-10 lg:w-11 lg:h-11 items-center justify-center rounded-xl bg-gray-100 hover:bg-primary-50 hover:text-primary-700 transition-all text-gray-600"
+                whileHover={{ scale: 1.05, y: -4, rotateX: 10 }}
+                whileTap={{ scale: 0.95, y: 2 }}
+                className="hidden md:flex w-10 h-10 lg:w-11 lg:h-11 items-center justify-center rounded-xl bg-gray-100 hover:bg-primary-50 hover:text-primary-700 transition-all text-gray-600 btn-3d"
               >
                 <SearchOutlined className="text-lg" />
               </motion.button>
@@ -255,14 +259,16 @@ export default function Navbar() {
                 whileTap={{ scale: 0.98 }}
                 className="hidden md:block"
               >
-                <Button
-                  type="primary"
-                  size="large"
-                  className="bg-gradient-to-r from-primary-700 to-primary-600 hover:from-primary-600 hover:to-primary-500 border-none rounded-xl px-5 lg:px-7 h-11 lg:h-12 font-semibold shadow-lg shadow-primary-700/25 hover:shadow-xl hover:shadow-primary-700/30 transition-all"
-                >
-                  <span className="hidden lg:inline">Get In Touch</span>
-                  <span className="lg:hidden">Contact</span>
-                </Button>
+                <Tilt maxTilt={25} scale={1.08} className="rounded-xl">
+                  <Button
+                    type="primary"
+                    size="large"
+                    className="btn-3d bg-gradient-to-r from-primary-700 to-primary-600 hover:from-primary-600 hover:to-primary-500 border-none rounded-xl px-5 lg:px-7 h-11 lg:h-12 font-semibold"
+                  >
+                    <span className="hidden lg:inline">Get In Touch</span>
+                    <span className="lg:hidden">Contact</span>
+                  </Button>
+                </Tilt>
               </motion.div>
 
               {/* Language Button */}

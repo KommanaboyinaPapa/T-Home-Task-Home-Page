@@ -12,6 +12,7 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import Tilt from "@/components/Tilt";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -114,8 +115,7 @@ export default function TestimonialsSection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group h-full"
                 >
-                  <div className="bg-white rounded-3xl p-8 h-full shadow-soft hover:shadow-elegant transition-all duration-500 relative overflow-hidden border border-gray-100">
-                    {/* Quote Icon */}
+                  <Tilt className="bg-white rounded-3xl p-8 h-full shadow-soft hover:shadow-elegant transition-all duration-500 relative overflow-hidden border border-gray-100 card-hover">
                     <div className="w-14 h-14 rounded-2xl bg-primary-700 flex items-center justify-center mb-6 group-hover:bg-secondary-600 transition-colors duration-300">
                       <span className="text-white text-2xl font-serif">"</span>
                     </div>
@@ -157,7 +157,7 @@ export default function TestimonialsSection() {
 
                     {/* Decorative Element */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-100 transition-opacity" />
-                  </div>
+                  </Tilt>
                 </motion.div>
               </SwiperSlide>
             ))}

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Tilt from "@/components/Tilt";
 import {
   UserOutlined,
   TrophyOutlined,
@@ -55,7 +56,7 @@ export default function StatsSection() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="group"
             >
-              <div className="relative bg-white rounded-2xl p-8 shadow-soft hover:shadow-elegant transition-all duration-500 border border-gray-100 card-hover">
+                <Tilt className="relative bg-white rounded-2xl p-8 shadow-soft hover:shadow-elegant transition-all duration-500 border border-gray-100 card-hover">
                 {/* Icon */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -86,7 +87,7 @@ export default function StatsSection() {
 
                 {/* Decorative Line */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-700 to-secondary-600 rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              </div>
+              </Tilt>
             </motion.div>
           ))}
         </div>

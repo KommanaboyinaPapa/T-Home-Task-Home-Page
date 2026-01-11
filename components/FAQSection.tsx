@@ -84,7 +84,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }: FAQItemProps) => {
         className={`relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer ${
           isOpen
             ? "bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 shadow-xl shadow-primary-700/20"
-            : "bg-white hover:bg-gray-50 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-gray-200"
+            : "bg-white hover:bg-gray-50 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-gray-200 card-hover"
         }`}
       >
         <div className="w-full p-6 flex items-center gap-4 text-left">
@@ -259,7 +259,7 @@ export default function FAQSection() {
             className="lg:col-span-2 lg:sticky lg:top-32"
           >
             <div className="relative">
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 p-8 text-white">
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 p-8 text-white card-hover">
                 <div className="absolute inset-0 opacity-10">
                   <div
                     className="absolute inset-0"
@@ -289,7 +289,13 @@ export default function FAQSection() {
                   <div className="space-y-3">
                     <motion.a
                       href="#contact"
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{
+                        scale: 1.01,
+                        y: -3,
+                        rotateX: 4,
+                        rotateY: -4,
+                        transformPerspective: 1200,
+                      }}
                       whileTap={{ scale: 0.98 }}
                       className="flex items-center justify-between w-full px-5 py-4 bg-white text-primary-700 rounded-xl font-semibold hover:bg-gray-100 transition-colors group"
                     >
@@ -302,7 +308,13 @@ export default function FAQSection() {
 
                     <motion.a
                       href="tel:+919876543210"
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{
+                        scale: 1.01,
+                        y: -3,
+                        rotateX: 4,
+                        rotateY: -4,
+                        transformPerspective: 1200,
+                      }}
                       whileTap={{ scale: 0.98 }}
                       className="flex items-center justify-between w-full px-5 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-white/20 transition-colors border border-white/20 group"
                     >
@@ -335,7 +347,7 @@ export default function FAQSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.5 }}
-                className="bg-white rounded-2xl p-5 shadow-lg shadow-gray-100/50 border border-gray-100"
+                className="bg-white rounded-2xl p-5 shadow-lg shadow-gray-100/50 border border-gray-100 card-hover"
               >
                 <div className="text-3xl mb-2">📞</div>
                 <div className="font-semibold text-gray-900">Call Support</div>
@@ -346,7 +358,7 @@ export default function FAQSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.6 }}
-                className="bg-white rounded-2xl p-5 shadow-lg shadow-gray-100/50 border border-gray-100"
+                className="bg-white rounded-2xl p-5 shadow-lg shadow-gray-100/50 border border-gray-100 card-hover"
               >
                 <div className="text-3xl mb-2">💬</div>
                 <div className="font-semibold text-gray-900">Live Chat</div>

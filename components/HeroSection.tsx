@@ -9,6 +9,7 @@ import {
   CheckCircleFilled,
 } from "@ant-design/icons";
 import CountUp from "react-countup";
+import Tilt from "@/components/Tilt";
 
 const heroSlides = [
   {
@@ -171,30 +172,34 @@ export default function HeroSection() {
                 variants={itemVariants}
                 className="flex flex-wrap gap-4 mb-12"
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    type="primary"
-                    size="large"
-                    className="h-14 px-8 text-lg font-semibold bg-secondary-600 hover:bg-secondary-500 border-none rounded-xl shadow-lg hover:shadow-xl transition-all"
-                    icon={<ArrowRightOutlined />}
+                <Tilt maxTilt={20} scale={1.08} className="rounded-xl">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    Book Free Consultation
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    size="large"
-                    className="h-14 px-8 text-lg font-semibold bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white rounded-xl backdrop-blur-sm"
+                    <Button
+                      type="primary"
+                      size="large"
+                      className="btn-3d h-14 px-8 text-lg font-semibold bg-secondary-600 hover:bg-secondary-500 border-none rounded-xl shadow-lg hover:shadow-2xl transition-all"
+                      icon={<ArrowRightOutlined />}
+                    >
+                      Book Free Consultation
+                    </Button>
+                  </motion.div>
+                </Tilt>
+                <Tilt maxTilt={20} scale={1.08} className="rounded-xl">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    Learn More
-                  </Button>
-                </motion.div>
+                    <Button
+                      size="large"
+                      className="btn-3d h-14 px-8 text-lg font-semibold bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white rounded-xl backdrop-blur-sm"
+                    >
+                      Learn More
+                    </Button>
+                  </motion.div>
+                </Tilt>
               </motion.div>
 
               {/* Trust Indicators */}
@@ -231,46 +236,50 @@ export default function HeroSection() {
             >
               {/* Main Image Card */}
               <div className="relative">
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  className="relative rounded-3xl overflow-hidden shadow-2xl"
-                >
-                  <div className="aspect-[4/3] bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <motion.div
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                        className="mb-4"
-                      >
-                        <HomeOutlined className="text-8xl text-white/80" />
-                      </motion.div>
-                      <h3 className="text-2xl font-bold text-white mb-2">Your Dream Home Awaits</h3>
-                      <p className="text-white/70">Find the perfect loan for your perfect home</p>
+                <Tilt maxTilt={15} scale={1.05} className="rounded-3xl">
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                    className="relative rounded-3xl overflow-hidden shadow-2xl card-hover"
+                  >
+                    <div className="aspect-[4/3] bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <motion.div
+                          animate={{ y: [0, -10, 0] }}
+                          transition={{ duration: 3, repeat: Infinity }}
+                          className="mb-4"
+                        >
+                          <HomeOutlined className="text-8xl text-white/80" />
+                        </motion.div>
+                        <h3 className="text-2xl font-bold text-white mb-2">Your Dream Home Awaits</h3>
+                        <p className="text-white/70">Find the perfect loan for your perfect home</p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </Tilt>
 
                 {/* Floating Stats Card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1, duration: 0.5 }}
-                  className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-elegant p-6"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-secondary-100 flex items-center justify-center">
-                      <HomeOutlined className="text-2xl text-secondary-600" />
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary-700">
-                        <CountUp end={95} duration={2.5} suffix="%" />
+                <Tilt maxTilt={25} scale={1.1} className="absolute -bottom-8 -left-8 rounded-2xl">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1, duration: 0.5 }}
+                    className="bg-white rounded-2xl shadow-elegant p-6 card-hover float-3d"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-xl bg-secondary-100 flex items-center justify-center">
+                        <HomeOutlined className="text-2xl text-secondary-600" />
                       </div>
-                      <p className="text-gray-500 text-sm">Success Rate</p>
+                      <div>
+                        <div className="text-3xl font-bold text-primary-700">
+                          <CountUp end={95} duration={2.5} suffix="%" />
+                        </div>
+                        <p className="text-gray-500 text-sm">Success Rate</p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </Tilt>
 
                 {/* Floating Badge */}
                 <motion.div

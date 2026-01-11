@@ -12,6 +12,7 @@ import {
   BankOutlined,
   ArrowRightOutlined,
 } from "@ant-design/icons";
+import Tilt from "@/components/Tilt";
 
 const services = [
   {
@@ -102,7 +103,7 @@ export default function ServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group"
             >
-              <div className="relative bg-white rounded-3xl p-8 h-full shadow-soft hover:shadow-elegant transition-all duration-500 card-hover overflow-hidden">
+                <Tilt className="relative bg-white rounded-3xl p-8 h-full shadow-soft hover:shadow-elegant transition-all duration-500 card-hover overflow-hidden">
                 {/* Gradient Overlay on Hover */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}
@@ -152,7 +153,7 @@ export default function ServicesSection() {
                     <ArrowRightOutlined />
                   </motion.button>
                 </div>
-              </div>
+              </Tilt>
             </motion.div>
           ))}
         </div>

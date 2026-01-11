@@ -30,8 +30,7 @@ export default function CertificationSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-4 bg-white rounded-2xl p-6 shadow-soft hover:shadow-lg transition-all"
+            className="flex items-center gap-4 bg-white rounded-2xl p-6 shadow-soft hover:shadow-lg transition-all card-hover"
           >
             <div className="w-16 h-16 flex items-center justify-center">
               <SafetyCertificateOutlined className="text-5xl text-primary-700" />
@@ -47,8 +46,7 @@ export default function CertificationSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-4 bg-white rounded-2xl p-6 shadow-soft hover:shadow-lg transition-all"
+            className="flex items-center gap-4 bg-white rounded-2xl p-6 shadow-soft hover:shadow-lg transition-all card-hover"
           >
             <div className="w-16 h-16 flex items-center justify-center">
               <SafetyCertificateOutlined className="text-5xl text-primary-700" />

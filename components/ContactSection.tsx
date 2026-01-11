@@ -168,7 +168,22 @@ export default function ContactSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.2 + index * 0.1 }}
-                  whileHover={{ scale: 1.02, x: 5 }}
+                  whileHover={{
+                    scale: 1.015,
+                    x: 4,
+                    y: -4,
+                    rotateX: 5,
+                    rotateY: -6,
+                    transformPerspective: 1200,
+                  }}
+                  whileTap={{
+                    scale: 0.995,
+                    x: 2,
+                    y: -2,
+                    rotateX: 2,
+                    rotateY: -3,
+                    transformPerspective: 1200,
+                  }}
                   className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-lg shadow-gray-200/50 border border-gray-100 hover:shadow-xl hover:border-gray-200 transition-all duration-300 cursor-pointer"
                 >
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${info.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
@@ -189,7 +204,7 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5 }}
-              className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 p-6 text-white"
+              className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 p-6 text-white card-hover"
             >
               <div className="absolute inset-0 opacity-10">
                 <div
@@ -246,7 +261,7 @@ export default function ContactSection() {
             className="lg:col-span-3"
           >
             <div className="relative">
-              <div className="relative bg-white rounded-3xl shadow-2xl shadow-gray-200/50 border border-gray-100 p-8 md:p-10 overflow-hidden">
+              <div className="relative bg-white rounded-3xl shadow-2xl shadow-gray-200/50 border border-gray-100 p-8 md:p-10 overflow-hidden card-hover">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
 
                 {submitted && (
